@@ -1,0 +1,354 @@
+1.) write a prog to print AtoZ alphabet using string.
+
+package basicstring;
+
+public class StringAtoZ {
+
+	public static void main(String[] args) {
+		StringBuilder sb = new StringBuilder("");
+
+		for (char ch = 'a'; ch <= 'z'; ch++) {
+			sb.append(ch);
+
+		}
+		System.out.println(sb);
+
+	}
+
+}
+
+output:- abcdefghijklmnopqrstuvwxyz
+
+2.) wap to print atoz using for loop.
+
+package basicstring;
+
+public class StringAlphabet {
+
+	public static void main(String[] args) {
+		String str = "abcdefghijklmnopqrstuvwxyz";
+
+		for (int i = 0; i < str.length(); i++) {
+			System.out.println(str.charAt(i));
+		}
+
+	}
+
+}
+
+output:- 
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+
+3.) wap to check how many times alphabets present in string.
+
+package basicstring;
+
+public class StringCompression {
+
+	public static void main(String[] args) {
+		String str = "aabbcc";
+		String newstr = "";
+
+		for (int i = 0; i < str.length(); i++) {
+			Integer count = 1;
+			while (i < str.length() - 1 && str.charAt(i) == str.charAt(i + 1)) {
+				count++;
+				i++;
+
+			}
+			newstr = newstr + str.charAt(i);
+			if (count > 1) {
+				newstr = newstr + count.toString();
+				
+			}
+			
+		}
+		System.out.println(newstr);
+
+	}
+
+}
+ 
+output:- a2b2c2
+
+4.) check two string are equal or not.
+
+package basicstring;
+
+public class StringEqual {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "AdityaKumar";
+		String str1 = "LeetCode";
+		String str2 = "AdityaKumar";
+
+		System.out.println(str.equals(str1) + " " + str.equals(str2));
+
+	}
+
+}
+
+output:-false true
+
+5.) wap to print length of string.
+
+package basicstring;
+
+public class StringIndex {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str1 = "aditya";
+		String str2 = "soni";
+		String str3 = str1+" "+str2;
+		
+		for(int i=0;i<str3.length();i++) {
+			System.out.print(str3.charAt(i)+" ");
+		}
+		System.out.println();
+
+	}
+
+}
+
+output:- a d i t y a   s o n i 
+
+6.) wap to string introduction.
+
+package basicstring;
+
+public class StringIntro {
+
+	public static void main(String[] args) {
+		String s = "hello";// creating string by Java string literal
+		String str1 = new String("Aditya");// creating Java string by new keyword
+		char ch[] = { 'a', 'd', 'i', 't', 'y', 'a' };
+		String str2 = new String(ch);// converting char array to string
+		System.out.println(s);
+		System.out.println(str1);
+		System.out.println(str2);
+
+	}
+
+}
+output:- hello
+Aditya
+aditya
+
+7.) wap to calculate the length of string.
+
+package basicstring;
+
+public class StringLength {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "aditya soni";
+		String str2 = new String("java is a prog lang.");
+		
+
+		System.out.println(str.length());
+		System.out.println(str2.length());
+		
+		System.out.println(str.length() + str2.length());
+
+	}
+
+}
+output:-11
+20
+31
+
+8.) wap to check string is plaindrone or not.
+
+package basicstring;
+
+public class StringPalindrome {
+
+	public static void main(String[] args) {
+		String str = "rapecar";
+		boolean flag = true;
+
+		for (int i = 0; i < str.length() / 2; i++) {
+			int n = str.length();
+			if (str.charAt(i) != str.charAt(n - 1 - i)) {
+				//not a Plain drone condition
+				flag = false;
+				break;
+			}
+
+		}
+		  if(flag)    
+	            System.out.println("Given string is palindrome");    
+	        else    
+	            System.out.println("Given string is not a palindrome");    
+
+	}
+
+}
+
+output :- Given string is not a palindrome
+
+9.) wap to replace string index variable to other variable.
+
+package basicstring;
+
+public class StringReplace {
+
+	public static void main(String[] args) {
+		String str = "apnacollege".replace("l", "");
+		String str2 = "apnacollege".replace('a', 'n');
+
+		System.out.println(str);
+		System.out.println(str2);
+
+	}
+
+}
+output:-
+apnacoege
+npnncollege
+
+10.) wap to print how many vovels present in string.
+
+package basicstring;
+
+import java.util.Scanner;
+
+public class StringUpper {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		int count = 0;
+
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+				count++;
+			}
+		}
+		System.out.println(count);
+		sc.close();
+	}
+
+}
+output:- aditya
+3 
+
+11.) wap to enter a string from user.
+
+package basicstring;
+
+import java.util.Scanner;
+
+public class StringUser {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Scanner cd = new Scanner(System.in);
+
+		String name = sc.next();// single world store
+		System.out.println(name);
+
+		String name2 = cd.nextLine();// full line contain
+		System.out.println(name2);
+		sc.close();
+		cd.close();
+
+	}
+
+}
+output :-
+leetcode
+leetcode
+hackerrank
+hackerrank
+
+12.) wap to print given string with first letter is capital.
+
+package basicstring;
+
+public class StringVovels {
+
+	public static void main(String[] args) {
+		String str = "i am aditya soni";
+		StringBuilder sb = new StringBuilder("");
+
+		char ch = Character.toUpperCase(str.charAt(0));
+		sb.append(ch);
+
+		for (int i = 1; i < str.length(); i++) {
+			if (str.charAt(i) == ' ' && i < str.length() - 1) {
+				sb.append(str.charAt(i));
+				i++;
+				sb.append(Character.toUpperCase(str.charAt(i)));
+			}else {
+				sb.append(str.charAt(i));
+			}
+		}
+		System.out.println(sb.toString());
+
+	}
+
+}
+output is:- I Am Aditya Soni
+
+13.) pratice question of (string) from hackerRank 
+
+package basicstring;
+
+import java.util.Scanner;
+
+public class StringHakerrankQ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String A = sc.next();
+		String B = sc.next();
+
+		System.out.println(A.length() + B.length());
+		System.out.println(A.compareTo(B) > 0 ? "Yes" : "No");
+		System.out.println(A.substring(0, 1).toUpperCase() + A.substring(1, A.length()) + " "
+				+ B.substring(0, 1).toUpperCase() + B.substring(1, B.length()));
+
+		sc.close();
+	}
+
+}
+output:-
+hello
+java
+9
+No
+Hello Java
+
+
+
